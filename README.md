@@ -1,6 +1,6 @@
 # Overview
 
-This is a Task Manager, a Django project designed to manage tasks on our daily routine. This project is a part of Django Tutorial Class.
+NeShop, a Django project for an multi-vendor e-commerce website. This project is a part of Django Tutorial Class.
 
 ## Installation
 
