@@ -3,12 +3,13 @@ from django.contrib.auth.models import BaseUserManager, AbstractBaseUser
 
 
 class CustomerUserManager(BaseUserManager):
-    def create_user(self, email, password=None):
+    def create_user(self, email, password=None, user_type=None):
         if not email:
             raise ValueError('Users must have an email address')
 
         user = self.model(
             email=self.normalize_email(email),
+            user_type=user_type
         )
 
         user.set_password(password)
@@ -34,6 +35,7 @@ class CustomUser(AbstractBaseUser):
         max_length=255,
         unique=True,
     )
+    user_type = models.CharField(max_length=20, null=True)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
