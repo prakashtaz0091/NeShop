@@ -245,12 +245,12 @@
     {% endblock footer %}
     <!--/Footer-->
 
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.scrollUp.min.js"></script>
-    <script src="js/price-range.js"></script>
-    <script src="js/jquery.prettyPhoto.js"></script>
-    <script src="js/main.js"></script>
+    <script src="{% static 'common/js/jquery.js' %}"></script>
+    <script src="{% static 'common/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'common/js/jquery.scrollUp.min.js' %}"></script>
+    <script src="{% static 'common/js/price-range.js' %}"></script>
+    <script src="{% static 'common/js/jquery.prettyPhoto.js' %}"></script>
+    <script src="{% static 'common/js/main.js' %}"></script>
     {% block extra_js %} {% endblock extra_js %}
   </body>
 </html>
