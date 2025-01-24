@@ -4,6 +4,12 @@ from .models import CustomUser
 from django.contrib.auth import authenticate, login, logout
 
 
+def logout_view(request):
+    logout(request)
+    # print(request.user, "***************************")
+    return redirect('login_view')
+
+
 def login_view(request):
     
     if request.method == 'POST':
