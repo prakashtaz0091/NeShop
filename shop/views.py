@@ -4,6 +4,31 @@ from django.db.models import Prefetch
 from django.db.models import Count, Max, Min
 from django.core.paginator import Paginator
 
+
+
+def product_detail_view(request, product_id):
+    
+    try:
+        product = Product.objects.prefetch_related(
+                    'images', 
+                    'categories'
+                    ).select_related(
+                    'brand'
+                    ).get(id=product_id)
+    except Product.DoesNotExist:
+        return redirect('shop_view')
+    except Exception as e:
+        print(e)
+        return redirect('shop_view')
+    else:
+        context = {
+            'product': product
+        }
+
+    
+    return render(request, 'shop/product_detail.html', context)
+
+
 def brand_view(request, brand_id):
     request.session['brand_id'] = brand_id
     return redirect('shop_view')

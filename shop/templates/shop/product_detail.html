@@ -1,0 +1,54 @@
+{% extends 'common/base.html' %} 
+{% load static %}
+
+{% block title %}
+    Product Detail
+{% endblock title %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'shop/css/product_detail.css' %}">
+{% endblock extra_css %}
+
+
+
+
+{% block content %}
+    <div class="container " style="margin-top: 3%;">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="product-image-wrapper">
+                <img src="{{ product.images.all.0.image.url }}" alt="" />
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                
+                <div class="details">
+                    <h2> {{ product.name }} | <small> {{ product.brand.name }} </small>
+                    
+                    <br>
+                    <small> 
+                     {% for category in product.categories.all %}
+                        {{ category.name }}
+                        
+                        {% if not forloop.last %}
+                            ,
+                        {% endif %}
+                        
+                     {% endfor %}
+                    
+                    </small>
+                    </h2> 
+                    <hr>
+                    <h4> <b>Price</b>: Rs. {{product.price}} </h4>
+                    <p> {{ product.description }} </p>
+                    <br>
+                    <hr>
+                    <a href="" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}
