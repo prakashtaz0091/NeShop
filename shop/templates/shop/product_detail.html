@@ -13,12 +13,24 @@
 
 
 {% block content %}
-    <div class="container " style="margin-top: 3%;">
+
+    <div class="container" style="margin-top: 1%;">
+        <div class="row" style="margin-bottom: 1%;">
+            <div class="col-md-12">
+                <a href="{% url 'shop_view' %}">
+                    <button class="btn btn-default" style="float: left;">Back</button>
+                </a>
+            </div>
+        </div>
         <div class="row">
             <div class="col-md-5">
                 <div class="product-image-wrapper">
+                <!-- <img src="{{ product.images.all.0.image.url }}" alt="" /> -->
+                {% if product.images.all %}
                 <img src="{{ product.images.all.0.image.url }}" alt="" />
-
+                {% else %}
+                <img src="{% static 'shop/images/default_product.webp' %}" alt="" />
+                {% endif %}
                 </div>
             </div>
             <div class="col-md-7">
