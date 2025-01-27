@@ -28,6 +28,8 @@ class Product(models.Model):
     description = models.TextField()
     categories = models.ManyToManyField(Category, related_name="products", blank=True)
     brand = models.ForeignKey(Brand, on_delete=models.SET_NULL, null=True, related_name="products")
+    stock = models.PositiveIntegerField(default=0)
+    
     
     def __str__(self):
         return self.name

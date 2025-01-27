@@ -5,7 +5,6 @@ from django.db.models import Count, Max, Min
 from django.core.paginator import Paginator
 
 
-
 def product_detail_view(request, product_id):
     
     try:
