@@ -2,8 +2,13 @@
 
 NeShop, a Django project for an multi-vendor e-commerce website. This project is a part of Django Tutorial Class.
 
-## Installation
 
+## Deployment video
+[![Watch the video](https://img.youtube.com/vi/QNAcWt0aPac/hqdefault.jpg)](https://youtu.be/QNAcWt0aPac)
+
+
+
+## Installation
 0. Create a project directory and open it in your fav code editor and run the following commands in the terminal:
 
 1. Clone the repository:
